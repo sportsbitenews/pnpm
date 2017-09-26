@@ -9,7 +9,9 @@ before_install:
   - git fetch --unshallow
   - npm install -g pnpm@next
 install:
+  - cd test
   - pnpm install
+  - cd ..
 script:
   - /bin/bash lint-commits.sh
   - ./node_modules/.bin/commitlint --from=$TRAVIS_COMMIT
